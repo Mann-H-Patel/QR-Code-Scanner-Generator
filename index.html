@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="author">
+        <h1 class="typer author" id="main" data-words="Created By Mann Patel" data-delay="100"
+            data-deleteDelay="1000"></h1>
+        <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+    </div>
+
+    <main>
+        
+        <div class="container">
+            <h4 style="color: rgb(255, 4, 255); font-family: monospace; font-size: 30px; margin: 4px;">Enter The URL :
+            </h4>
+            <input type="text" class="input">
+
+            <img src="" alt="QR Code Scanner" class="image">
+
+            <button class="button" onclick="generateQr()">Generate QR Code Scanner</button>
+            <button class="button" onclick="window.location.href = 'https:github.com/Mann-H-Patel';">Go To My GitHub</button>
+            <p class="author">API Is provided By <a href="https://goqr.me/api/">gogr.me</a></p>
+
+            <script>
+                let input = document.querySelector(".input");
+                let image = document.querySelector(".image")
+
+                function generateQr() {
+                    image.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}`;
+                    image.setAttribute("style", "display: block;")
+                }
+            </script>
+        </div>
+    </main>
+</body>
+
+</html>
